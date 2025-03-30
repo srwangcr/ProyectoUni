@@ -1,3 +1,9 @@
+if __name__ == "__main__": 
+    print("Este módulo no se puede ejecutar directamente. Por favor, inicie desde main.py.")
+    import main # Esto asegura que el módulo no se ejecute directamente
+else:
+    pass
+
 #Los tabs estan con espacios 
 while True: # entra en un bucle  
  nombre_user = input("Por favor ingrese su nombre completo: ") # pide tu nombre
@@ -6,32 +12,40 @@ while True: # entra en un bucle
  else: # en caso de que falle le pide reingresas los datos
    print("por favor ingrese su nombre y apellido sin números")
 
-while True: # entra en un bucle
-    try: # llama a lo siguiente: 
-     numero_de_cedula = int(input("Por favor ingrese su número de cedula: ")) # pide tu numero de cedula
-     if numero_de_cedula != 9: #####: # verifica que el numero de cedula sea mayor a 0 para evitar uso de negativos
-      print("La cedula debe tener 9 digitos, sin carácteres especiales")
-     else: 
-      break # sale del bucle
-    except ValueError: # esto hace una excepcion del break para manndar el siguiente print a pantalla y volver a pedir datos
-     print("por favor ingrese su numero de celuda sin letras ni caracteres especiales. ")
+
+while True:  # entra en un bucle
+    try:  # llama a lo siguiente:
+        numero_de_cedula = int(input("Por favor ingrese su número de cédula: "))  # pide tu número de cédula
+        
+        # Verifica que el número de cédula sea positivo y tenga exactamente 9 dígitos
+        if numero_de_cedula <= 0:
+            print("La cédula debe ser un número positivo.")
+        elif len(str(numero_de_cedula)) != 9:
+            print("La cédula debe tener exactamente 9 dígitos.")
+        else:
+            break  # sale del bucle si todas las condiciones son válidas
+    except ValueError:  # esto maneja la excepción si el usuario ingresa un valor no válido
+        print("Por favor ingrese su número de cédula sin letras ni caracteres especiales.")
      
 while True: # abre bucle
     try: # llama al siguiente proceso
-     numero_de_celular = input("Por favor ingrese su número de celular: ") # pide el numero de celular
-     if numero_de_celular < 8 :
-       print("reingrese su numero de celular, debe de ser entre 8 a 11 numeros, ni puede ser negativo")
-       numero_de_celular = input("Por favor ingrese su número de celular: ")
-     else: 
-      break
-    except ValueError:
-     print("por favor ingrese su numero de celular sin letras ni caracteres especiales. ")
      
-while True:
-    correo = str(input("Por favor ingrese su correo electronico: "))
-    if "@" not in correo:
-     print ("el correo electronico no es valido ")
-    else:
-     break
-direccion = str(input("Por favor ingrese su direccion: "))
-print(nombre_user, numero_de_cedula, numero_de_celular,  correo, direccion)
+     numero_de_celular = int(input("Por favor ingrese su número de celular: ")) # pide el numero de celular
+
+     if numero_de_celular <= 0 :
+       print("el numero de celular debe ser mayor a 0 digitos") # verifica que el numero de celular sea mayor a 8 para evitar uso de negativos
+     elif len(str(numero_de_celular)) != 8:
+            print("La cédula debe tener exactamente 8 dígitos.")
+     else:
+      break  # sale del bucle si todas las condiciones son válidas
+    except ValueError:  # esto maneja la excepción si el usuario ingresa un valor no válido
+      print("Por favor ingrese su número de celular sin letras ni caracteres especiales.")
+
+while True: # abre bucle
+    correo = str(input("Por favor ingrese su correo electronico: ")) # pide el correo electronico
+    if "@" not in correo: # verifica que el correo tenga un @
+     print ("el correo electronico no es valido ") # si no tiene arroba le pide que lo reingrese
+    else: ## si tiene arroba salta al siguiente proceso
+     break # si el correo es valido
+direccion = str(input("Por favor ingrese su direccion: ")) # pide la direccion
+print(nombre_user, numero_de_cedula, numero_de_celular,  correo, direccion) # imprime los datos ingresados por el usuario

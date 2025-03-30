@@ -1,3 +1,9 @@
+if __name__ == "__main__": 
+    print("Este módulo no se puede ejecutar directamente. Por favor, inicie desde main.py.")
+    import main  # Esto asegura que el módulo no se ejecute directamente
+else:
+    pass
+
 def mostrar_paquetes():
     paquetes = [
         ("1. Paquete 1: Incluye una estadía de 1 noche, con desayuno incluido", 200),
@@ -6,7 +12,8 @@ def mostrar_paquetes():
         ("4. Paquete 4: Proporciona una estadía de 7 noches con desayunos incluidos, tres cenas en el restaurante premium, una hora de masajes relajantes en el spa", 1260)
     ] 
     for i, (descripcion, precio) in enumerate(paquetes, start=1):
-     print(f"{i}. {descripcion} - Precio: ${precio}")  # ¡Ahora se usa "precio"!
+        print(f"{i}. {descripcion} - Precio: ${precio}")  # ¡Ahora se usa "precio"!
+    
     while True:  # Este while asegura que no se ingrese un valor flotante o string 
         try:   
             paquete = int(input("Ingrese el paquete deseado, por favor que sea un número del 1 al 4: "))
@@ -16,5 +23,3 @@ def mostrar_paquetes():
                 print("Por favor, elija un número válido para el sistema")
         except ValueError: 
             print("Por favor, que sea un número sin decimales")
-paquete_final, precio = mostrar_paquetes()
-print (f"Usted eligió este paquete: {paquete_final} con un precio de {precio} dolares")
