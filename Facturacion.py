@@ -9,7 +9,6 @@ from menu import paquete_final, precio_paquete, Horario_Final
 
 def Facturacion(servicios_elegidos, total_servicios):  # Recibe los servicios elegidos y el total
 
-    
     # Crear una lista que incluya el nombre, las horas y el precio unitario de cada servicio
     servicios_info = [f"{servicio['nombre']} (Horas: {servicio['horas']}, Precio unitario: ${servicio['precio']})" for servicio in servicios_elegidos]
     servicios_elegidos_str = ", ".join(servicios_info)  # El join ingresa a la lista para consultar datos
@@ -19,23 +18,19 @@ def Facturacion(servicios_elegidos, total_servicios):  # Recibe los servicios el
     IVA = 0.13  # IVA como porcentaje
     Total_Facturacion = subtotal + (subtotal * IVA)  # Total con IVA
 
-    facturacion_lista = []
-
-    facturacion_info = (f"Nombre: {nombre_user}\n "
-                        f"Cédula: {numero_de_cedula}\n "
-                        f"Celular: {numero_de_celular}\n "
-                        f"Correo: {correo}\n "
-                        f"Dirección: {direccion}\n "
-                        f"Usted eligió este paquete: {paquete_final}\n "
-                        f"con un precio de {precio_paquete} dólares\n "
-                        f"horario final: {Horario_Final}\n "
-                        f"Subtotal: {subtotal}\n"
-                        f"IVA: {subtotal * IVA}\n"  # Cálculo del IVA
-                        f"Total final: {Total_Facturacion}\n"
-                        f"Servicios elegidos: {servicios_elegidos_str}\n "
-                        f"Precio total de servicios: ${total_servicios}\n")  # Agregado el precio total de servicios
-    facturacion_lista.append(facturacion_info)
-
-    print(facturacion_lista[0])
+    # Imprimir la información de facturación
+    print(f"Nombre: {nombre_user}")
+    print(f"Cédula: {numero_de_cedula}")
+    print(f"Celular: {numero_de_celular}")
+    print(f"Correo: {correo}")
+    print(f"Dirección: {direccion}")
+    print(f"Usted eligió este paquete: {paquete_final}")
+    print(f"Con un precio de {precio_paquete} dólares")
+    print(f"Horario final: {Horario_Final}")
+    print(f"Subtotal: {subtotal}")
+    print(f"IVA: {subtotal * IVA}")  # Cálculo del IVA
+    print(f"Total final: {Total_Facturacion}")
+    print(f"Servicios elegidos: {servicios_elegidos_str}")
+    print(f"Precio total de servicios: ${total_servicios}")
 
 # No llames a la función aquí, se llamará desde el módulo menu

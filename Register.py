@@ -41,11 +41,14 @@ while True: # abre bucle
     except ValueError:  # esto maneja la excepción si el usuario ingresa un valor no válido
       print("Por favor ingrese su número de celular sin letras ni caracteres especiales.")
 
-while True: # abre bucle
-    correo = str(input("Por favor ingrese su correo electronico: ")) # pide el correo electronico
-    if "@" not in correo: # verifica que el correo tenga un @
-     print ("el correo electronico no es valido ") # si no tiene arroba le pide que lo reingrese
-    else: ## si tiene arroba salta al siguiente proceso
-     break # si el correo es valido
+while True:  # abre bucle
+    correo = str(input("Por favor ingrese su correo electrónico: "))  # pide el correo electrónico
+    # Verifica que el correo tenga un '@' y un '.com' y que no contenga caracteres no válidos
+    if "@" not in correo or ".com" not in correo or not correo.replace(".", "").replace("@", "").isalnum():
+        print("El correo electrónico no es válido. Asegúrese de que contenga '@', '.com' y no tenga caracteres no válidos.")  # si no es válido, le pide que lo reingrese
+    else:  # si tiene arroba y .com, salta al siguiente proceso
+        break  # si el correo es válido
+
+
 direccion = str(input("Por favor ingrese su direccion: ")) # pide la direccion
 print(nombre_user, numero_de_cedula, numero_de_celular,  correo, direccion) # imprime los datos ingresados por el usuario

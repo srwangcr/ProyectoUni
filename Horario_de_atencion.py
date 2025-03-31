@@ -14,7 +14,7 @@ horarios = [
 
 def mostrar_horarios():
     """Muestra la lista de horarios disponibles."""
-    for i, (descripcion) in enumerate(horarios, start=1):
+    for i, (descripcion) in enumerate(horarios, start=1): # Enumeración para mostrar el número de horario
         print(f"{i}. {descripcion}")
 
 def seleccionar_horario():

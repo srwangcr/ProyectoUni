@@ -5,7 +5,7 @@ else:
     pass
 
 def mostrar_paquetes():
-    paquetes = [
+    paquetes = [ 
         ("1. Paquete 1: Incluye una estadía de 1 noche, con desayuno incluido", 200),
         ("2. Paquete 2: Comprende una estadía de 3 noches, con desayunos incluidos y derecho a una cena en el restaurante premium.", 570),
         ("3. Paquete 3: Ofrece una estadía de 5 noches, con desayunos incluidos, dos cenas en el restaurante premium y una hora de masajes relajantes en el spa.", 925),
